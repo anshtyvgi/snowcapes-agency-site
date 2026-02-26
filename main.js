@@ -224,6 +224,90 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ── Momentum Compare Slider (Before / After) ──
+    const compareSlider = document.getElementById('compareSlider');
+    if (compareSlider) {
+        let isDragging = false;
+        let isHovering = false;
+        let sliderXPercent = 50;
+        let autoplayRef = null;
+        const autoplayDuration = 5000;
+        let startTime = Date.now();
+
+        const updateSlider = (percent) => {
+            sliderXPercent = Math.max(0, Math.min(100, percent));
+            compareSlider.style.setProperty('--clip-pct', `${sliderXPercent}%`);
+        };
+
+        const handleMove = (clientX) => {
+            const rect = compareSlider.getBoundingClientRect();
+            const x = clientX - rect.left;
+            const percent = (x / rect.width) * 100;
+            requestAnimationFrame(() => updateSlider(percent));
+        };
+
+        const startAutoplay = () => {
+            startTime = Date.now() - (sliderXPercent / 100) * autoplayDuration;
+            const animate = () => {
+                if (isHovering || isDragging) return;
+                const elapsedTime = Date.now() - startTime;
+                const progress = (elapsedTime % (autoplayDuration * 2)) / autoplayDuration;
+                const percentage = progress <= 1 ? progress * 100 : (2 - progress) * 100;
+                updateSlider(percentage);
+                autoplayRef = requestAnimationFrame(animate);
+            };
+            autoplayRef = requestAnimationFrame(animate);
+        };
+
+        const stopAutoplay = () => {
+            if (autoplayRef) cancelAnimationFrame(autoplayRef);
+        };
+
+        // Pointer Events (supports Mouse + Touch drag)
+        compareSlider.addEventListener('pointerdown', (e) => {
+            isDragging = true;
+            stopAutoplay();
+            handleMove(e.clientX);
+            compareSlider.style.cursor = 'ew-resize';
+        });
+
+        window.addEventListener('pointermove', (e) => {
+            if (isDragging) handleMove(e.clientX);
+        });
+
+        window.addEventListener('pointerup', () => {
+            if (isDragging) {
+                isDragging = false;
+                compareSlider.style.cursor = 'col-resize';
+                if (!isHovering) startAutoplay(); // Resume if not hovering
+            }
+        });
+
+        // Hover functionality
+        compareSlider.addEventListener('mouseenter', () => {
+            isHovering = true;
+            stopAutoplay();
+        });
+
+        compareSlider.addEventListener('mousemove', (e) => {
+            if (!isDragging && isHovering) {
+                handleMove(e.clientX);
+            }
+        });
+
+        compareSlider.addEventListener('mouseleave', () => {
+            isHovering = false;
+            if (!isDragging) {
+                 // Reset and start autoplay from middle
+                 updateSlider(50);
+                 startAutoplay();
+            }
+        });
+
+        // Init
+        startAutoplay();
+    }
+
     // ── Testimonials — Wall of Love Slider ──
     const testimonials = [
         {

@@ -2869,6 +2869,173 @@ a {
     font-style: italic;
 }
 
+/* ---------- MOMENTUM COMPARE SLIDER ---------- */
+.compare-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.compare-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    max-width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1), inset 0 0 0 1px rgba(0,0,0,0.05);
+    background: #0f172a;
+    cursor: col-resize;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Base "After" Layer */
+.compare-after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.ca-content {
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ca-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.ca-dashboard {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.ca-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    backdrop-filter: blur(10px);
+}
+
+.ca-card.wide {
+    grid-column: span 2;
+    background: linear-gradient(90deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1));
+    color: #cbd5e1;
+}
+
+/* Clipped "Before" Layer */
+.compare-before {
+    position: absolute;
+    inset: 0;
+    background: #fdfdfd;
+    background-image: 
+        linear-gradient(#f1f5f9 1px, transparent 1px),
+        linear-gradient(90deg, #f1f5f9 1px, transparent 1px);
+    background-size: 20px 20px;
+    clip-path: inset(0 calc(100% - var(--clip-pct)) 0 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+}
+
+.cb-content {
+    width: 80%;
+    height: 70%;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(255,255,255,0.8);
+}
+
+.cb-content h3 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: #64748b;
+}
+
+.cb-sketch {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #94a3b8;
+    line-height: 2;
+    font-size: 1.1rem;
+}
+
+/* The Sliding Handlebar Divider */
+.compare-divider {
+    position: absolute;
+    top: 0;
+    left: var(--clip-pct);
+    bottom: 0;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, transparent, #8b5cf6, transparent);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+/* The glowing handle mimicking framer-motion sparkles */
+.cd-line {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cd-line::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3) 50%, transparent);
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(4px);
+}
+
+.cd-handle {
+    width: 24px;
+    height: 32px;
+    background: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(139,92,246,0.5), inset 0 1px 0 rgba(255,255,255,1);
+    color: #0f172a;
+    z-index: 20;
+    position: relative;
+    /* Pushes it slightly right so the divider visually looks centered over the masked edge */
+    transform: translateX(1px);
+}
+
+
 /* ---------- TESTIMONIALS: Wall of Love ---------- */
 .testimonials {
     position: relative;
