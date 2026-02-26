@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snowcapes — AI-Native MVP Studio</title>
+    <meta name="description" content="Turn your idea into working software." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <!-- 1. Hero -->
+        <section class="hero-supermi text-center" id="home">
+            <nav class="navbar-supermi fade-in">
+                <div class="nav-supermi-container">
+                    <a href="#" class="nav-supermi-logo">☼ Snowcapes</a>
+                    <div class="nav-supermi-links">
+                        <a href="#how-it-works">Process</a>
+                        <a href="#who-its-for">Who It's For</a>
+                        <a href="#results">Results</a>
+                        <a href="#faq">Hard Questions</a>
+                    </div>
+                    <div class="nav-supermi-actions">
+                        <a href="#contact" class="dot-flow-btn" id="df-nav"></a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container hero-container fade-in">
+                <div class="shiny-badge-wrap">
+                    <span class="sparkle sp1">✦</span>
+                    <span class="sparkle sp2">✦</span>
+                    <span class="sparkle sp3">✦</span>
+                    <span class="sparkle sp4">✦</span>
+                    <div class="shiny-badge">
+                        <span class="shiny-badge-inner">Building Proudly with AI</span>
+                    </div>
+                </div>
+                <h1 class="hero-title">Build the first version. <span class="text-gradient">Fast.</span></h1>
+                <p class="hero-subtitle">
+                    You have the idea. You don't need a 6-person engineering team to test it.<br />
+                    You need a working product in the hands of real users.<br />
+                    We build version one in weeks.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="dot-flow-btn" id="df-hero"></a>
+                    <a href="#how-it-works" class="btn btn-secondary btn-lg" style="border-radius:9999px;">See How It
+                        Works</a>
+                </div>
+
+                <div class="hero-dashboard-mockup">
+                    <div class="dashboard-glass floating">
+                        <div class="dashboard-header">
+                            <div class="mac-dots"><span></span><span></span><span></span></div>
+                            <div class="dashboard-title">product.snowcapes.io — Live</div>
+                        </div>
+                        <div class="dashboard-body">
+                            <div class="dash-sidebar"></div>
+                            <div class="dash-main">
+                                <div class="dash-card"></div>
+                                <div class="dash-card"></div>
+                                <div class="dash-card wide"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logo-strip fade-in">
+                <span>Pre-seed</span>
+                <span>Seed Stage</span>
+                <span>Solo Founders</span>
+                <span>Internal Tools</span>
+                <span>SaaS Ideas</span>
+                <span>Experiments</span>
+            </div>
+        </section>
+
+        <!-- 2. Founder Mode — AI Diagnosis Chat -->
+        <section class="founder-mode" id="situation">
+            <div class="fm-wrap">
+
+                <!-- Chat card -->
+                <div class="fm-card" id="fm-card">
+
+                    <!-- Header -->
+                    <div class="fm-header">
+                        <div class="fm-avatar">☼</div>
+                        <div class="fm-header-info">
+                            <div class="fm-name">Snowcapes</div>
+                            <div class="fm-status"><span class="fm-dot"></span>AI Product Partner</div>
+                        </div>
+                        <button class="fm-restart" id="fm-restart" title="Restart">↺</button>
+                    </div>
+
+                    <!-- Progress strip -->
+                    <div class="fm-progress-wrap">
+                        <div class="fm-progress-label">
+                            <span>Validation Readiness</span>
+                            <span id="fm-progress-pct">0%</span>
+                        </div>
+                        <div class="fm-progress-track">
+                            <div class="fm-progress-fill" id="fm-progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Messages -->
+                    <div class="fm-messages" id="fm-messages"></div>
+
+                    <!-- Choice buttons -->
+                    <div class="fm-choices" id="fm-choices"></div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Build Mode — Cinematic Dark Section -->
+        <section class="build-mode" id="what-we-do">
+
+            <!-- Tall scroll space — 300vh lets scroll drive camera -->
+            <div class="bm-sticky">
+
+                <!-- Full-screen 3D canvas -->
+                <div class="bm-canvas" id="bm-canvas"></div>
+
+                <!-- Headline overlay — top center -->
+                <div class="bm-headline" id="bm-headline">
+                    <p class="bm-pre">We don't do decks.</p>
+                    <h2 class="bm-title">We ship product.</h2>
+                </div>
+
+                <!-- Milestone label overlays — right side, shown by JS -->
+                <div class="bm-labels-wrap" id="bm-labels-wrap">
+                    <div class="bm-label" data-idx="0">
+                        <span class="bm-num">01</span>
+                        <span class="bm-label-title">Define the core loop.</span>
+                        <span class="bm-label-sub">Cut the idea to something testable.</span>
+                    </div>
+                    <div class="bm-label" data-idx="1">
+                        <span class="bm-num">02</span>
+                        <span class="bm-label-title">Build the product.</span>
+                        <span class="bm-label-sub">Only what proves value.</span>
+                    </div>
+                    <div class="bm-label" data-idx="2">
+                        <span class="bm-num">03</span>
+                        <span class="bm-label-title">We launch it.</span>
+                        <span class="bm-label-sub">Real users. Real interaction.</span>
+                    </div>
+                    <div class="bm-label" data-idx="3">
+                        <span class="bm-num">04</span>
+                        <span class="bm-label-title">You get real data.</span>
+                        <span class="bm-label-sub">Behavior beats assumptions.</span>
+                    </div>
+                </div>
+
+                <!-- Final statement overlay — bottom center -->
+                <div class="bm-final" id="bm-final">
+                    <p class="bm-final-line">No enterprise bloat. No overengineering.</p>
+                    <p class="bm-final-closer">You leave with working software.</p>
+                    <a href="#contact" class="dot-flow-btn bm-cta" id="df-build"></a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. How It Works — Timeline -->
+        <section class="how-it-works section-padding" id="how-it-works">
+            <div class="container" style="max-width:900px;">
+                <div class="timeline-section-header fade-in">
+                    <p class="timeline-eyebrow">THE PROCESS</p>
+                    <h2 class="section-title">Four steps. One working product.</h2>
+                    <p class="section-subtitle mx-auto">No phases that last 3 months. No status meetings. Just shipping.
+                    </p>
+                </div>
+
+                <div class="timeline-layout">
+                    <div class="timeline-left">
+                        <div class="timeline-spine"></div>
+                        <div class="timeline-node" data-step="0"></div>
+                        <div class="timeline-node" data-step="1"></div>
+                        <div class="timeline-node" data-step="2"></div>
+                        <div class="timeline-node" data-step="3"></div>
+                    </div>
+
+                    <div class="timeline-cards">
+                        <div class="tl-item" data-index="0">
+                            <div class="tl-card">
+                                <div class="tl-card-head">
+                                    <h3 class="tl-title">Idea Sprint</h3>
+                                    <span class="tl-badge">Week 1</span>
+                                </div>
+                                <div class="tl-card-body">
+                                    <div>
+                                        <p class="tl-desc">We cut your idea down to something testable. Most products
+                                            are too big at birth. We fix that in one week.</p>
+                                        <ul class="tl-bullets">
+                                            <li>Map the core problem</li>
+                                            <li>Identify the target user</li>
+                                            <li>Lock version one scope — hard</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tl-item" data-index="1">
+                            <div class="tl-card">
+                                <div class="tl-card-head">
+                                    <h3 class="tl-title">Rapid Build</h3>
+                                    <span class="tl-badge">Weeks 1–3</span>
+                                </div>
+                                <div class="tl-card-body">
+                                    <div>
+                                        <p class="tl-desc">We build only what matters. No speculative features. Clean
+                                            architecture from day one so you can hand it to a team later.</p>
+                                        <ul class="tl-bullets">
+                                            <li>Core features only</li>
+                                            <li>No tech debt shortcuts</li>
+                                            <li>Daily internal shipping</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tl-item" data-index="2">
+                            <div class="tl-card">
+                                <div class="tl-card-head">
+                                    <h3 class="tl-title">Launch</h3>
+                                    <span class="tl-badge">Week 3–4</span>
+                                </div>
+                                <div class="tl-card-body">
+                                    <div>
+                                        <p class="tl-desc">We deploy. Now users decide what survives. This is when the
+                                            real learning starts — not before.</p>
+                                        <ul class="tl-bullets">
+                                            <li>Production deployment</li>
+                                            <li>Analytics from day one</li>
+                                            <li>Real users, real feedback</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tl-item" data-index="3">
+                            <div class="tl-card">
+                                <div class="tl-card-head">
+                                    <h3 class="tl-title">Iterate</h3>
+                                    <span class="tl-badge">Ongoing</span>
+                                </div>
+                                <div class="tl-card-body">
+                                    <div>
+                                        <p class="tl-desc">You improve based on behavior, not opinions. Data tells you
+                                            what to build next. Now you have a real product feedback loop.</p>
+                                        <ul class="tl-bullets">
+                                            <li>Cut what users ignore</li>
+                                            <li>Double down on what works</li>
+                                            <li>Make scale decisions with evidence</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. What You Actually Get — Toggle -->
+        <section class="what-you-get section-padding bg-gradient-mesh">
+            <div class="container fade-in">
+                <div class="wyg-grid">
+                    <div class="wyg-text" style="color:white;">
+                        <h2 class="section-title" style="color:white;">What you actually get</h2>
+                        <p class="wyg-manifesto" style="color:rgba(255,255,255,0.85);">
+                            Not a prototype.<br />
+                            <strong style="color:white;">A real, working product.</strong>
+                        </p>
+
+                        <!-- Toggle -->
+                        <div class="wyg-toggle">
+                            <button class="wyg-tab active" data-view="founder">Founder View</button>
+                            <button class="wyg-tab" data-view="technical">Technical View</button>
+                        </div>
+                    </div>
+
+                    <div class="wyg-list glass-card floating">
+                        <div class="wyg-view active" id="view-founder">
+                            <ul>
+                                <li>A live product</li>
+                                <li>Real users interacting with it</li>
+                                <li>Analytics installed and running</li>
+                                <li>Clarity on what to build next</li>
+                                <li>Evidence for your next conversation</li>
+                            </ul>
+                        </div>
+                        <div class="wyg-view" id="view-technical">
+                            <ul>
+                                <li>Structured React codebase</li>
+                                <li>Scalable architecture baseline</li>
+                                <li>Clean component system</li>
+                                <li>TypeScript throughout</li>
+                                <li>Documentation for the next phase</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Who It's For -->
+        <section class="who-its-for section-padding" id="who-its-for">
+            <div class="container fade-in" style="max-width:700px;">
+                <h2 class="section-title">Built for early-stage builders.</h2>
+
+                <div class="qualify-list">
+                    <div class="qualify-item">
+                        <div class="qualify-label">Pre-seed or seed</div>
+                        <div class="qualify-desc">You need validation speed. Not roadmaps.</div>
+                    </div>
+                    <div class="qualify-item">
+                        <div class="qualify-label">Experimenting with a new SaaS idea</div>
+                        <div class="qualify-desc">You need proof before hiring a single engineer.</div>
+                    </div>
+                    <div class="qualify-item">
+                        <div class="qualify-label">Running an internal tool experiment</div>
+                        <div class="qualify-desc">You need working software, not a slide deck to approve.</div>
+                    </div>
+                </div>
+
+                <div class="disqualifier">
+                    If you need a 12-month enterprise roadmap — we're probably not the right fit.<br />
+                    <span>That's not a limitation. That's a filter.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Momentum — Fake Dashboard Toggle -->
+        <section class="momentum section-padding bg-tertiary text-center" id="momentum">
+            <div class="container fade-in">
+                <h2 class="section-title">Momentum &gt; perfection.</h2>
+                <p class="section-subtitle mx-auto" style="margin-bottom:2.5rem;">Planning feels productive. Shipping is
+                    productive.</p>
+
+                <div class="momentum-toggle">
+                    <button class="mom-tab active" data-state="before">Before Launch</button>
+                    <button class="mom-tab" data-state="after">After Launch</button>
+                </div>
+
+                <div class="momentum-dashboard">
+                    <div class="mom-db-header">
+                        <div class="mac-dots"><span></span><span></span><span></span></div>
+                        <span class="mom-db-title">Analytics — Last 30 days</span>
+                    </div>
+                    <div class="mom-db-body" id="mom-state-before">
+                        <div class="mom-empty">
+                            <div class="mom-empty-icon">📊</div>
+                            <div class="mom-empty-text">No data yet.</div>
+                            <div class="mom-empty-sub">Launch first.</div>
+                        </div>
+                    </div>
+                    <div class="mom-db-body hidden" id="mom-state-after">
+                        <div class="mom-chart">
+                            <div class="mom-chart-bars">
+                                <div class="mom-bar" style="--h:15%"></div>
+                                <div class="mom-bar" style="--h:28%"></div>
+                                <div class="mom-bar" style="--h:22%"></div>
+                                <div class="mom-bar" style="--h:41%"></div>
+                                <div class="mom-bar" style="--h:38%"></div>
+                                <div class="mom-bar" style="--h:55%"></div>
+                                <div class="mom-bar" style="--h:62%"></div>
+                                <div class="mom-bar" style="--h:70%"></div>
+                                <div class="mom-bar" style="--h:68%"></div>
+                                <div class="mom-bar" style="--h:84%"></div>
+                                <div class="mom-bar" style="--h:91%"></div>
+                                <div class="mom-bar active" style="--h:100%"></div>
+                            </div>
+                            <div class="mom-chart-stats">
+                                <div class="mom-stat"><span class="mom-stat-n">247</span><span
+                                        class="mom-stat-l">Users</span></div>
+                                <div class="mom-stat"><span class="mom-stat-n">1.4k</span><span
+                                        class="mom-stat-l">Sessions</span></div>
+                                <div class="mom-stat"><span class="mom-stat-n">63%</span><span
+                                        class="mom-stat-l">Retention</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Results -->
+        <section class="results section-padding" id="results">
+            <div class="container fade-in text-center">
+                <div class="results-grid">
+                    <div class="result-stat">
+                        <div class="stat-value">2–4 Weeks</div>
+                        <div class="stat-label">Typical time to working MVP</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="stat-value">Lower Cost</div>
+                        <div class="stat-label">Compared to hiring a team</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="stat-value">Real Data</div>
+                        <div class="stat-label">From actual users, not surveys</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-block">
+                    <p class="case-label">— A real outcome</p>
+                    <p class="testimonial-quote">
+                        "Founder had an idea for an internal workflow SaaS. Built MVP in 3 weeks.
+                        Killed 40% of planned features after seeing real usage. Shipped a tighter product.
+                        Got their first paying user in week 5."
+                    </p>
+                    <p class="case-note">That's what pruning looks like.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Hard Questions -->
+        <section class="faq section-padding bg-tertiary" id="faq">
+            <div class="container fade-in" style="max-width:680px;">
+                <h2 class="section-title">Hard questions.</h2>
+                <p class="section-subtitle" style="margin-bottom:3rem;">Ask them now. Not after.</p>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Will this scale?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. But first we validate. Scaling unvalidated software is waste.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is the code production-grade?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>It's structured and clean. Built to evolve, not to throw away.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What stack?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Modern React + TypeScript. Tools selected for your use case. Nothing exotic.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How fast?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>2–4 weeks depending on scope. We set this at the start and hold to it.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What if I change my mind mid-build?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Small changes, yes. Pivoting the whole product mid-sprint adds time. We scope tightly to
+                                prevent this.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Final CTA -->
+        <section class="cta section-padding" id="contact">
+            <div class="container fade-in">
+                <div class="cta-container">
+                    <h2 class="section-title text-center">Ready to see it working?</h2>
+                    <p class="section-subtitle text-center mx-auto" style="margin-bottom:3rem;">
+                        Tell us what you're building. We'll respond with a practical plan.
+                    </p>
+
+                    <form class="contact-form" action="#" method="POST"
+                        onsubmit="event.preventDefault(); alert('We\'ll be in touch. Let\'s ship it.');">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Jane Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="jane@acme.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="product">What does your product do?</label>
+                            <textarea id="product" name="product" rows="3" required
+                                placeholder="One sentence. What does it do and for whom?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="v1">What must version one do?</label>
+                            <textarea id="v1" name="v1" rows="3" required
+                                placeholder="List the 1–3 core features. That's it."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="asap">ASAP</option>
+                                <option value="month">Within a month</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+
+                        <div class="form-submit text-center">
+                            <button type="submit" class="dot-flow-btn" id="df-form" style="width:100%;justify-content:center;"></button>
+                            <p class="submit-note">Clear scope. Defined timeline. No endless dev cycles.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer fade-in text-center">
+        <div class="container">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo">Snowcapes</a>
+                <p>An AI-native MVP studio.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#who-its-for">Who It's For</a>
+                <a href="#results">Results</a>
+                <a href="#faq">FAQ</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Snowcapes Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SVG Filter for Liquid Glass Distortion -->
+    <svg style="display:none" aria-hidden="true">
+        <filter id="dock-glass-distortion" x="-20%" y="-20%" width="140%" height="140%"
+            color-interpolation-filters="sRGB">
+            <feTurbulence type="turbulence" baseFrequency="0.65 0.75" numOctaves="2" seed="2" result="noise" />
+            <feDisplacementMap id="dock-displacement" in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R"
+                yChannelSelector="G" />
+        </filter>
+    </svg>
+
+    <!-- Bottom Dock Navigation -->
+    <nav id="dock" aria-label="Section navigation">
+        <div id="dock-inner">
+            <!-- Layer 1: Glass distortion filter + blur -->
+            <div class="dock-glass-filter"></div>
+            <!-- Layer 2: Translucent color overlay -->
+            <div class="dock-glass-overlay"></div>
+            <!-- Layer 3: Specular highlight (mouse-reactive) -->
+            <div class="dock-glass-specular"></div>
+            <!-- Layer 4: Content -->
+            <div class="dock-content">
+                <!-- Home -->
+                <button class="dock-btn" data-target="#home" aria-label="Home">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                    <span class="dock-tooltip">Home</span>
+                </button>
+                <!-- Process -->
+                <button class="dock-btn" data-target="#how-it-works" aria-label="Process">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span class="dock-tooltip">Process</span>
+                </button>
+                <!-- About -->
+                <button class="dock-btn" data-target="#situation" aria-label="About">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="7" height="7" x="3" y="3" rx="1" />
+                        <rect width="7" height="7" x="14" y="3" rx="1" />
+                        <rect width="7" height="7" x="14" y="14" rx="1" />
+                        <rect width="7" height="7" x="3" y="14" rx="1" />
+                    </svg>
+                    <span class="dock-tooltip">About</span>
+                </button>
+                <!-- Who It's For -->
+                <button class="dock-btn" data-target="#who-its-for" aria-label="Who It's For">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    <span class="dock-tooltip">Who It's For</span>
+                </button>
+                <!-- Results -->
+                <button class="dock-btn" data-target="#results" aria-label="Results">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" x2="18" y1="20" y2="10" />
+                        <line x1="12" x2="12" y1="20" y2="4" />
+                        <line x1="6" x2="6" y1="20" y2="14" />
+                    </svg>
+                    <span class="dock-tooltip">Results</span>
+                </button>
+                <!-- FAQ -->
+                <button class="dock-btn" data-target="#faq" aria-label="FAQ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <path d="M12 17h.01" />
+                    </svg>
+                    <span class="dock-tooltip">FAQ</span>
+                </button>
+                <!-- Contact -->
+                <button class="dock-btn" data-target="#contact" aria-label="Get Started">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    <span class="dock-tooltip">Get Started</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
