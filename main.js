@@ -1,5 +1,15 @@
 import './style.css'
-import { initBuildMode } from './build-mode-3d.js'
+import { initBuildMode } from '
+    // ── Infinite Portfolio Ticker ──
+    const track = document.querySelector('.portfolio-track');
+    if (track) {
+        // Clone the cards twice to ensure it overflows enough for a seamless CSS marquee
+        const cards = Array.from(track.children);
+        cards.forEach(card => track.appendChild(card.cloneNode(true)));
+        cards.forEach(card => track.appendChild(card.cloneNode(true)));
+    }
+
+./build-mode-3d.js'
 import { initDotFlowButtons } from './dot-flow.js'
 
 document.addEventListener('DOMContentLoaded', () => {
