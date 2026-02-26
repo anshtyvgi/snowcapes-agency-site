@@ -224,35 +224,101 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ── Momentum Dashboard — Before / After toggle ──
-    const momTabs = document.querySelectorAll('.mom-tab');
-    const momBefore = document.getElementById('mom-state-before');
-    const momAfter = document.getElementById('mom-state-after');
+    // ── Testimonials — Wall of Love Slider ──
+    const testimonials = [
+        {
+            quote: `"Founder had an idea for an internal workflow SaaS. Built MVP in 3 weeks. Killed 40% of planned features after seeing real usage. Shipped a tighter product. Got their first paying user in week 5."`,
+            authorInitials: "AS",
+            authorBg: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
+            authorName: "Amber Stone",
+            authorRole: "Head of Enterprise ABM, UserTesting",
+            stats: [
+                { val: "18", sym: "%", lbl: "Title Accuracy" },
+                { val: "4", sym: "x", lbl: "Email Accuracy" },
+                { val: "50", sym: "%", lbl: "Bounce Rates" }
+            ]
+        },
+        {
+            quote: `"We spent 6 months trying to hire a full-stack engineer. Snowcapes built our entire customer portal in 14 days. It's clean, fast, and our clients love the new interface."`,
+            authorInitials: "MR",
+            authorBg: "linear-gradient(135deg, #10b981, #059669)",
+            authorName: "Marcus Reed",
+            authorRole: "CTO, OmniLogistics",
+            stats: [
+                { val: "14", sym: "d", lbl: "Time to Launch" },
+                { val: "3", sym: "x", lbl: "Faster Iterations" },
+                { val: "99", sym: "%", lbl: "Client Approval" }
+            ]
+        },
+        {
+            quote: `"I had the vision but zero technical skills. The team stripped away all the unnecessary fluff from my initial pitch and delivered a lean product that actually converts."`,
+            authorInitials: "EJ",
+            authorBg: "linear-gradient(135deg, #f43f5e, #e11d48)",
+            authorName: "Evelyn Jones",
+            authorRole: "Solo Founder, FitTrack AI",
+            stats: [
+                { val: "60", sym: "%", lbl: "Cost Saved" },
+                { val: "12", sym: "k", lbl: "Users in Month 1" },
+                { val: "5", sym: "/5", lbl: "App Rating" }
+            ]
+        }
+    ];
 
-    const reanimateBars = () => {
-        const bars = momAfter.querySelectorAll('.mom-bar');
-        bars.forEach((bar, i) => {
-            bar.style.animation = 'none';
-            bar.offsetHeight; // force reflow
-            bar.style.setProperty('--i', i);
-            bar.style.animation = '';
-        });
+    let currentTestimonial = 0;
+    const testCard = document.querySelector('.test-card');
+    const testQuote = document.querySelector('.test-quote');
+    const testAvatar = document.querySelector('.test-avatar');
+    const testName = document.querySelector('.test-name');
+    const testRole = document.querySelector('.test-role');
+    const testStatsElements = document.querySelectorAll('.test-stat');
+
+    const updateTestimonial = (index) => {
+        if (!testCard) return;
+
+        // Fade out
+        testCard.style.opacity = '0';
+        testCard.style.transform = 'translateY(10px) scale(0.98)';
+
+        setTimeout(() => {
+            const data = testimonials[index];
+            testQuote.innerHTML = data.quote;
+            testAvatar.innerHTML = data.authorInitials;
+            testAvatar.style.background = data.authorBg;
+            testName.textContent = data.authorName;
+            testRole.textContent = data.authorRole;
+
+            data.stats.forEach((stat, i) => {
+                if (testStatsElements[i]) {
+                    const valEl = testStatsElements[i].querySelector('.ts-val');
+                    const lblEl = testStatsElements[i].querySelector('.ts-lbl');
+                    valEl.innerHTML = `${stat.val}<span>${stat.sym}</span>`;
+                    lblEl.textContent = stat.lbl;
+                }
+            });
+
+            // Fade in
+            testCard.style.opacity = '1';
+            testCard.style.transform = 'translateY(0) scale(1)';
+        }, 300);
     };
 
-    momTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            momTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            if (tab.dataset.state === 'after') {
-                momBefore.classList.add('hidden');
-                momAfter.classList.remove('hidden');
-                reanimateBars();
-            } else {
-                momAfter.classList.add('hidden');
-                momBefore.classList.remove('hidden');
-            }
-        });
-    });
+    const nextTestimonial = () => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        updateTestimonial(currentTestimonial);
+    };
+
+    const prevTestimonial = () => {
+        currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        updateTestimonial(currentTestimonial);
+    };
+
+    const navLeft = document.querySelector('.test-nav-left');
+    const navRight = document.querySelector('.test-nav-right');
+
+    if (navLeft && navRight) {
+        navLeft.addEventListener('click', prevTestimonial);
+        navRight.addEventListener('click', nextTestimonial);
+    }
     // ── Build Mode — Three.js 3D scene ─────────────────────────────────────
     initBuildMode();
 

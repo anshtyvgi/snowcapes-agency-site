@@ -2869,165 +2869,191 @@ a {
     font-style: italic;
 }
 
-/* ── 7. Momentum Dashboard ── */
-.momentum {
-    color: inherit;
+/* ---------- TESTIMONIALS: Wall of Love ---------- */
+.testimonials {
+    position: relative;
+    overflow: hidden;
+    background: #f8fafc;
 }
 
-.momentum-toggle {
-    display: flex;
+.test-header {
+    margin-bottom: 4rem;
+}
+
+.test-badge {
+    display: inline-flex;
+    align-items: center;
     gap: 0.5rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.mom-tab {
-    padding: 0.5rem 1.4rem;
-    border-radius: 9999px;
-    border: 1.5px solid var(--border-medium);
-    background: transparent;
-    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid var(--border-medium);
+    border-radius: 999px;
     font-size: 0.85rem;
     font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: var(--font-body);
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
-.mom-tab.active,
-.mom-tab:hover {
-    background: var(--text-primary);
-    color: white;
-    border-color: var(--text-primary);
+.test-badge::before {
+    content: '👑';
+    font-size: 1rem;
 }
 
-.momentum-dashboard {
-    display: inline-block;
-    width: 100%;
-    max-width: 620px;
+.test-slider-wrap {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.slider-bg-blur {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(136, 195, 255, 0.15), transparent 40%),
+                radial-gradient(circle at 80% 50%, rgba(255, 143, 177, 0.12), transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.test-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
     background: white;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-md);
-    overflow: hidden;
-    text-align: left;
+    border: 1px solid var(--border-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
-.mom-db-header {
+.test-nav:hover {
+    color: var(--text-dark);
+    border-color: #cbd5e1;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.test-nav-left { left: 0; }
+.test-nav-right { right: 0; }
+
+.test-card-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 650px;
+    perspective: 1000px;
+}
+
+.test-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3.5rem;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02);
+    text-align: left;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.test-quote {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #1e293b;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+
+.test-author {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 0.75rem 1.25rem;
-    border-bottom: 1px solid var(--border-light);
-    background: #fafafa;
 }
 
-.mom-db-title {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    letter-spacing: 0.02em;
+.test-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    background-size: cover;
+    background-position: center;
 }
 
-.mom-db-body {
-    padding: 2rem 1.5rem;
-    min-height: 200px;
+.placeholder-avatar {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
-.mom-db-body.hidden {
-    display: none;
+.test-info {
+    display: flex;
+    flex-direction: column;
 }
 
-/* Before state — empty */
-.mom-empty {
+.test-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.test-role {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.test-stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 5;
+}
+
+.test-stat {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    opacity: 0.5;
 }
 
-.mom-empty-icon {
+.ts-val {
     font-size: 2.5rem;
-}
-
-.mom-empty-text {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.mom-empty-sub {
-    font-size: 0.85rem;
-    color: var(--text-tertiary);
-}
-
-/* After state — chart */
-.mom-chart {
-    width: 100%;
-}
-
-.mom-chart-bars {
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1;
     display: flex;
     align-items: flex-end;
-    gap: 6px;
-    height: 120px;
-    margin-bottom: 1.25rem;
+    gap: 2px;
 }
 
-.mom-bar {
-    flex: 1;
-    height: var(--h);
-    background: #e5e7eb;
-    border-radius: 4px 4px 0 0;
-    transition: height 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
-    animation: bar-rise 0.6s ease both;
-    animation-delay: calc(var(--i, 0) * 60ms);
+.ts-val span {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 6px;
 }
 
-.mom-bar.active {
-    background: var(--accent-primary);
-}
-
-@keyframes bar-rise {
-    from {
-        height: 0;
-    }
-
-    to {
-        height: var(--h);
-    }
-}
-
-.mom-chart-stats {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--border-light);
-}
-
-.mom-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
-}
-
-.mom-stat-n {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    font-variant-numeric: tabular-nums;
-}
-
-.mom-stat-l {
-    font-size: 0.75rem;
-    color: var(--text-tertiary);
+.ts-lbl {
+    font-size: 0.85rem;
     font-weight: 500;
+    color: var(--text-light);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }

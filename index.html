@@ -449,55 +449,60 @@
             </div>
         </section>
 
-        <!-- 7. Momentum — Fake Dashboard Toggle -->
-        <section class="momentum section-padding bg-tertiary text-center" id="momentum">
-            <div class="container fade-in">
-                <h2 class="section-title">Momentum &gt; perfection.</h2>
-                <p class="section-subtitle mx-auto" style="margin-bottom:2.5rem;">Planning feels productive. Shipping is
-                    productive.</p>
-
-                <div class="momentum-toggle">
-                    <button class="mom-tab active" data-state="before">Before Launch</button>
-                    <button class="mom-tab" data-state="after">After Launch</button>
+        <!-- 7. Testimonials — Wall of Love -->
+        <section class="testimonials section-padding" id="testimonials">
+            <div class="container text-center fade-in">
+                <div class="test-header">
+                    <div class="test-badge">Wall of love</div>
+                    <h2 class="section-title">You're in good company</h2>
+                    <p class="section-subtitle mx-auto">You don't have to trust our word</p>
                 </div>
 
-                <div class="momentum-dashboard">
-                    <div class="mom-db-header">
-                        <div class="mac-dots"><span></span><span></span><span></span></div>
-                        <span class="mom-db-title">Analytics — Last 30 days</span>
-                    </div>
-                    <div class="mom-db-body" id="mom-state-before">
-                        <div class="mom-empty">
-                            <div class="mom-empty-icon">📊</div>
-                            <div class="mom-empty-text">No data yet.</div>
-                            <div class="mom-empty-sub">Launch first.</div>
-                        </div>
-                    </div>
-                    <div class="mom-db-body hidden" id="mom-state-after">
-                        <div class="mom-chart">
-                            <div class="mom-chart-bars">
-                                <div class="mom-bar" style="--h:15%"></div>
-                                <div class="mom-bar" style="--h:28%"></div>
-                                <div class="mom-bar" style="--h:22%"></div>
-                                <div class="mom-bar" style="--h:41%"></div>
-                                <div class="mom-bar" style="--h:38%"></div>
-                                <div class="mom-bar" style="--h:55%"></div>
-                                <div class="mom-bar" style="--h:62%"></div>
-                                <div class="mom-bar" style="--h:70%"></div>
-                                <div class="mom-bar" style="--h:68%"></div>
-                                <div class="mom-bar" style="--h:84%"></div>
-                                <div class="mom-bar" style="--h:91%"></div>
-                                <div class="mom-bar active" style="--h:100%"></div>
-                            </div>
-                            <div class="mom-chart-stats">
-                                <div class="mom-stat"><span class="mom-stat-n">247</span><span
-                                        class="mom-stat-l">Users</span></div>
-                                <div class="mom-stat"><span class="mom-stat-n">1.4k</span><span
-                                        class="mom-stat-l">Sessions</span></div>
-                                <div class="mom-stat"><span class="mom-stat-n">63%</span><span
-                                        class="mom-stat-l">Retention</span></div>
+                <div class="test-slider-wrap">
+                    <div class="slider-bg-blur"></div>
+                    <button class="test-nav test-nav-left" aria-label="Previous testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m15 18-6-6 6-6" />
+                        </svg>
+                    </button>
+
+                    <div class="test-card-container">
+                        <!-- Card content populated via JS -->
+                        <div class="test-card">
+                            <p class="test-quote">"Founder had an idea for an internal workflow SaaS. Built MVP in 3
+                                weeks. Killed 40% of planned features after seeing real usage. Shipped a tighter
+                                product. Got their first paying user in week 5."</p>
+                            <div class="test-author">
+                                <div class="test-avatar placeholder-avatar">AS</div>
+                                <div class="test-info">
+                                    <span class="test-name">Amber Stone</span>
+                                    <span class="test-role">Head of Enterprise ABM, UserTesting</span>
+                                </div>
                             </div>
                         </div>
+                    </div>
+
+                    <button class="test-nav test-nav-right" aria-label="Next testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="test-stats-row">
+                    <div class="test-stat">
+                        <div class="ts-val">18<span>%</span></div>
+                        <div class="ts-lbl">Title Accuracy</div>
+                    </div>
+                    <div class="test-stat">
+                        <div class="ts-val">4<span>x</span></div>
+                        <div class="ts-lbl">Email Accuracy</div>
+                    </div>
+                    <div class="test-stat">
+                        <div class="ts-val">50<span>%</span></div>
+                        <div class="ts-lbl">Bounce Rates</div>
                     </div>
                 </div>
             </div>
