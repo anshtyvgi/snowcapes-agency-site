@@ -1,5 +1,8 @@
 import './style.css'
-import { initBuildMode } from '
+import { initBuildMode } from './build-mode-3d.js'
+import { initDotFlowButtons } from './dot-flow.js'
+
+document.addEventListener('DOMContentLoaded', () => {
     // ── Infinite Portfolio Ticker ──
     const track = document.querySelector('.portfolio-track');
     if (track) {
@@ -9,10 +12,6 @@ import { initBuildMode } from '
         cards.forEach(card => track.appendChild(card.cloneNode(true)));
     }
 
-./build-mode-3d.js'
-import { initDotFlowButtons } from './dot-flow.js'
-
-document.addEventListener('DOMContentLoaded', () => {
     initDotFlowButtons();
 
     // ── Fade-in animations ──
