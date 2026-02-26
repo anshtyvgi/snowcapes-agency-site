@@ -45,11 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const applyActive = () => {
             rafPending = false;
-            // Pick the lowest index that is currently in the trigger zone
-            // (scrolling down → advance; scrolling up → retreat)
+            // Pick the index that is currently in the narrow center trigger zone
             let best = activeIdx;
             if (visibleSet.size > 0) {
-                best = Math.min(...visibleSet);
+                // If multiple are visible (rare with narrow margin), pick the one the user scrolled to
+                best = Math.max(...visibleSet);
             }
             if (best === activeIdx) return;
             activeIdx = best;
@@ -77,11 +77,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 requestAnimationFrame(applyActive);
             }
         }, {
-            rootMargin: '-25% 0px -25% 0px',
+            rootMargin: '-40% 0px -40% 0px',
             threshold: 0
         });
 
-        tlItems.forEach(item => tlObserver.observe(item));
+        tlItems.forEach((item, i) => {
+            // Allow clicking to expand a specific step and center it
+            item.addEventListener('click', () => {
+                activeIdx = i;
+
+                // Force UI update immediately before scroll
+                tlItems.forEach((el, idx) => el.classList.toggle('active', idx === activeIdx));
+                tlNodes.forEach((el, idx) => el.classList.toggle('active', idx === activeIdx));
+
+                // Smooth scroll the clicked card to the center of the viewport
+                item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+
+            tlObserver.observe(item);
+        });
     }
 
     // ── Bottom Dock: scroll-spy + click ──
